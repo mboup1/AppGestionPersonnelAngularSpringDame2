@@ -33,12 +33,4 @@ public class Employee {
         this.name = name;
         this.email = email;
     }
-
-//    With MySQL - JPA
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
-//    private long id;
-//    private String firstName;
-//    private String name;
-//    private String email;
 }
