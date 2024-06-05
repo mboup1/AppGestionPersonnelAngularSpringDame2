@@ -11,7 +11,7 @@ import axios from 'axios';
   templateUrl: './update-personne.component.html',
 })
 export class UpdatePersonneComponent {
-  baseUrl = 'http://localhost:8080/employee';
+  baseUrl = 'http://localhost:8080/api/employee';
   personForm!: FormGroup;
   personnes: Personne[] = [];
 

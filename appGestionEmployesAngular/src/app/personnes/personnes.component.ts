@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   templateUrl: './personnes.component.html',
 })
 export class PersonnesComponent {
-  baseUrl = 'http://localhost:8080/employee';
+  baseUrl = 'http://localhost:8080/api/employee';
   personnes: Personne[] = [];
   constructor(
     private personneService: PersonneService,

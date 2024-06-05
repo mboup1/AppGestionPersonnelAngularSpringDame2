@@ -18,7 +18,7 @@ export class PersonneService {
   constructor() { }
 
   async fetchData(): Promise<void> {
-    const jsonUrl = 'http://localhost:8080/employees';
+    const jsonUrl = 'http://localhost:8080/api/employees';
 
     try {
       const response = await axios.get(jsonUrl);
@@ -40,7 +40,7 @@ export class PersonneService {
 
 
   // fetchData(): void {
-  //   const jsonUrl = 'http://localhost:8080/employees';
+  //   const jsonUrl = 'http://localhost:8080/api/employees';
 
   //   axios.get(jsonUrl)
   //     .then(response => {

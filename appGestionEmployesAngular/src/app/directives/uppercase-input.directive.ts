@@ -10,8 +10,6 @@ export class UppercaseInputDirective {
     private control: NgControl
   ) { }
 
-  //Directive pour que les lettres d'un champ input soient en majuscule
-
   @HostListener('input', ['$event']) onInputChange($event: any) {
     if (this.control) {
       this.control.control?.setValue($event.target.value.toUpperCase());

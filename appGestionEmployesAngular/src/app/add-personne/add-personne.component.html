@@ -4,7 +4,6 @@
       <h1 class="display-6 text-dark text-center">Ajouter un employé</h1>
       <hr class="bg-dark mb-5" />
       <form [formGroup]="personForm" (ngSubmit)="createPersonne(personForm.value)">
-        <input type="text" formControlName="id" hidden />
         <div class="form-group mb-3">
           <label for="personFirstNameInput">Prénom</label>
           <input type="text" id="personFirstNameInput" class="form-control" formControlName="firstName" />

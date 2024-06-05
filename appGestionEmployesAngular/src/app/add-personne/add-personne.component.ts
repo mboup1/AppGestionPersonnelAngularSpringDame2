@@ -10,7 +10,7 @@ import axios from 'axios';
   templateUrl: './add-personne.component.html',
 })
 export class AddPersonneComponent {
-  baseUrl = 'http://localhost:8080/employee/id';
+  baseUrl = 'http://localhost:8080/api/employee';
   personForm!: FormGroup;
   personnes: Personne[] = [];
 
@@ -23,13 +23,11 @@ export class AddPersonneComponent {
   ngOnInit(): void {
     this.initPersonForm(),
       this.personnes = this.personneService.getPersons();
-      // console.log(this.personForm.value)
   }
 
   initPersonForm(): void {
     this.personForm = this.formBuilder.group({
-      // index: [0],
-      // id:1,
+
       firstName: ['', Validators.required],
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
@@ -42,22 +40,11 @@ export class AddPersonneComponent {
       console.log("Create successful:", response);
       this.router.navigate(['/employees'])
 
-      // Handle success, e.g., navigate to a different route
     })
     .catch(error => {
       console.error("Create failed:", error);
-      // Handle error, e.g., display an error message
     });
   }
 }
-
-
-  // onSubmitPerson(): void {
-  //   const personIndex = this.personForm.value.index;
-  //   let person = this.personForm.value;
-  //   this.personnes = this.personneService.createPerson(person);
-  //   this.personForm.reset()
-  //   this.router.navigate(['/employees'])
-  // }
 
 
