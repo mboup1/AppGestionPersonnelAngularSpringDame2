@@ -1,0 +1,37 @@
+<div class="row m-5">
+  <div class="col-12 col-md-10 col-lg-8 col-xl-6 mx-auto">
+    <div class="bg-white shadow rounded p-4">
+      <h1 class="display-6 text-dark text-center">Modifier infos employé</h1>
+      <hr class="bg-dark mb-5" />
+      <form [formGroup]="personForm" (ngSubmit)="updatePersonne(personForm.value.id, personForm.value)">
+        <input type="text" formControlName="id" hidden />
+        <div class="form-group mb-3">
+          <label for="personFirstNameInput">Prénom</label>
+          <input type="text" id="personFirstNameInput" class="form-control" formControlName="firstName" />
+          <div class="text-danger" *ngIf="personForm.get('firstName')?.invalid && personForm.get('firstName')?.touched ">
+            Le prénom est requis.
+          </div>
+        </div>
+        <div class="form-group mb-3">
+          <label for="personNameInput">Nom</label>
+          <input type="text" id="personNameInput" class="form-control" formControlName="name" />
+          <div class="text-danger" *ngIf=" personForm.get('name')?.invalid && personForm.get('name')?.touched ">
+            Le nom est requis.
+          </div>
+        </div>
+        <div class="form-group mb-3">
+          <label for="personEmailInput">Email</label>
+          <input type="text" id="personEmailInput" class="form-control" formControlName="email" />
+          <div class="text-danger" *ngIf=" personForm.get('email')?.invalid && personForm.get('email')?.touched ">
+            L'email est requis et doit être au bon format (exemple@exemple.com).
+          </div>
+        </div>
+        <div class="d-flex">
+          <button class="btn btn-success mx-auto" type="submit" [disabled]="personForm.invalid">
+            Enregistrer
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
